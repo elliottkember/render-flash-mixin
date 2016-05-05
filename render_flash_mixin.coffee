@@ -1,7 +1,7 @@
 RenderFlashMixin =
 
   _flash: (colour) ->
-    if @isMounted() # and not PRODUCTION
+    if @isMounted() # and process.env.NODE_ENV != 'production'
       @_show_flash(colour)
       setTimeout @_hide_flash, 400
 
