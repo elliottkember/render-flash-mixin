@@ -15,10 +15,10 @@ This automagically applies this mixin to all your React components.
 
 ```coffeescript
 originalReactClass = React.createClass
-    React.createClass = (obj) ->
-      obj.mixins = obj.mixins || []
-      obj.mixins.push(RenderFlashMixin)
-      originalReactClass(obj)
+React.createClass = (obj) ->
+  obj.mixins = obj.mixins || []
+  obj.mixins.push(RenderFlashMixin)
+  originalReactClass(obj)
 ```
 # Green everywhere?
 If your components are calling componentDidUpdate too often, you may want to implement [shouldComponentUpdate](http://buildwithreact.com/article/optimizing-with-shouldcomponentupdate).
